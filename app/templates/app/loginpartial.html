@@ -1,0 +1,21 @@
+﻿{% if user.is_authenticated %}
+<form id="logoutForm" action="/logout/" method="post">
+    {% csrf_token %}
+    <ul class="login">
+        <li class="login__item">Привет, {{ user.username }}!</li>
+        <li class="login__item"><a href="javascript:document.getElementById('logoutForm').submit()">Выйти</a></li>
+    </ul>
+</form>
+
+{% else %}
+
+
+    <li class="menu__item"><a href="{% url 'login' %}">
+            <svg width="27" height="31" viewBox="0 0 27 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.574072 21.8148C0.574072 18.6443 3.14428 16.0741 6.31479 16.0741H20.6666C23.8371 16.0741 26.4073 18.6443 26.4073 21.8148V30.4259H0.574072V21.8148Z" stroke="black" stroke-width="1.34814"/>
+                <circle cx="13.4899" cy="7.1759" r="6.60183" stroke="black" stroke-width="1.34814"/>
+            </svg>
+        </a></li>
+
+
+{% endif %}

@@ -1,0 +1,21 @@
+﻿{% extends "app/layout.html" %}
+{% load staticfiles %}
+{% block content %}
+
+    <div class="blog">
+        <div class="container">
+            <h2 class="blog__header">Полезные статьи</h2>
+            <div class="blog__wrapper">
+                {% for post in posts %}
+                    <div class="blog__item">
+                        <h3 class="blog__title"> {{post.title}} </h3>
+                        <div class="blog__posted"> {{post.posted}} </div>
+                        <p class="blog__description"> {{post.description}} </p>
+                        <a class="btn btn_next" href="{% url 'blogpost' parametr=post.id %}"> Читать далее </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

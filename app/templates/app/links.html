@@ -1,0 +1,14 @@
+﻿{% extends "app/layout.html" %}
+{% load staticfiles %}
+{% block content %}
+
+<div class="container">
+    <h2 class="advantage__header">Ссылки на полезные ресурсы</h2>
+    <ul style="list-style-type:none">
+        <li><a href="https://cvetovik.com/" target="_blank"> <img src="{% static 'img/logo-cvetovik.png' %}" alt="Logo 1" /></a></li>
+        <li><a href="https://flowwow.com/moscow/" target="_blank"> <img src="{% static 'img/logo-flowwow.png' %}" alt="Logo 2" /></a></li>
+        <li><a href="https://www.buketshop.su/catalog/cvety/" target="_blank"> <img src="{% static 'img/logo-bucketshop.png' %}" alt="Logo 3" /></a></li>
+    </ul>
+</div>
+
+{% endblock %}

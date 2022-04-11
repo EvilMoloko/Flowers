@@ -1,0 +1,47 @@
+﻿{% extends "app/layout.html" %}
+
+{% block content %}
+<main>
+    <div class="container">
+        <h2>Вход</h2>
+        <section id="loginForm">
+            <form action="." method="post" class="form">
+                {% csrf_token %}
+                <h4>Используйте свои данные, чтобы войти</h4>
+                <hr />
+                <div class="form-group">
+                    <label for="id_username" class="review__field">Имя пользователя</label>
+                    <div class="col-md-10">
+                        {{ form.username }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="id_password" class="review__field">Пароль</label>
+                    <div class="col-md-10">
+                        {{ form.password }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="hidden" name="next" value="/" />
+                        <input type="submit" value="Войти" class="btn btn-default" />
+                    </div>
+                </div>
+                {% if form.errors %}
+                <p class="validation-summary-errors">Пожалуйста, введите корретные имя пользователя и пароль</p>
+                {% endif %}
+            </form>
+        </section>
+    </div>
+</main>
+
+
+{% endblock %}
+
+
+{% block scripts %}
+
+    {% load staticfiles %}
+<script src="{% static 'app/scripts/jquery.validate.min.js' %}"></script>
+
+{% endblock %}

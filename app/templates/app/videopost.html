@@ -1,0 +1,21 @@
+﻿{% extends "app/layout.html" %}
+{% load staticfiles %}
+{% block content %}
+
+<div class="blogpost">
+        <div class="container">
+            <h2 class="blog__header">Полезные статьи</h2>
+            <div class="blog__wrapper">
+                <div class="blog__item">
+                    <h3 class="blog__title">Видео-ролик 1</h3>
+                    <VIDEO src="/media/video-1.mp4" controls="controls" poster="/media/poster-1.jpg"></VIDEO>
+                </div>
+                <div class="blog__item">
+                    <h3 class="blog__title">Видео-ролик 2</h3>
+                    <VIDEO src="/media/video-2.mp4" controls="controls" poster="/media/poster-2.jpg"></VIDEO>
+                </div>
+            </div>
+        </div>
+</div>
+
+{% endblock %}

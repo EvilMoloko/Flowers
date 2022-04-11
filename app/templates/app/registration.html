@@ -1,0 +1,21 @@
+﻿{% extends "app/layout.html" %}
+{% load staticfiles %}
+{% block content %}
+
+<main>
+    <div class="registration">
+        <div class="container">
+            <h2 class="registration__header">Регистрация пользователя</h2>
+            <form class="form" method="POST" >
+                {% csrf_token %}
+                <div>
+                {{ regform.as_p}}
+                <button type="submit" class="btn btn_submit" style="width: 150px" > Зарегистрировать </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</main>
+
+{% endblock %}

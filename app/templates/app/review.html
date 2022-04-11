@@ -1,0 +1,53 @@
+﻿{% extends "app/layout.html" %}
+{% load staticfiles %}
+{% block content %}
+
+<main>
+    <div class="review">
+        <div class="container">
+            {% if form != None %}
+            <h2 class="review__header">Отправьте заполненую анкету</h2>
+            <form class="form" method="post">
+                {% csrf_token %}
+                <label for="{{ form.name.id_for_label }}">{{ form.name.label }}:</label>
+                {{ form.name }}
+                <label for="{{ form.order.id_for_label }}">{{ form.order.label }}:</label>
+                {{ form.order }}
+                <label for="{{ form.notice.id_for_label }}">{{ form.notice.label }}:</label>
+                {{ form.notice }}
+                <label for="{{ form.email.id_for_label }}">{{ form.email.label }}:</label>
+                {{ form.email }}
+                <label for="{{ form.message.id_for_label }}">{{ form.message.label }}:</label>
+                {{ form.message }}
+                <input class="btn btn_submit" type="submit" value="Отправить" />
+            </form>
+            {% else %}
+            <h2 class="review__header">Благодарим за Ваш отзыв</h2>
+            <div class="review__subheader">Вы сообщили следующую информацию:</div>
+            <div class="review__wrapper">
+                <div class="review__field"><span>Имя:</span>{{ data.name }}</div>
+                <div class="review__field"><span>Вы уже совершали заказ у нас?</span>{{ data.order }}</div>
+                <div class="review__field"><span>Получать специальные предложения на E-mail?</span>{{ data.notice }}</div>
+                <div class="review__field"><span>Ваш E-mail:</span>{{ data.email }}</div>
+                <div class="review__field"><span>Отзыв:</span>{{ data.message }}</div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</main>
+
+<script>
+
+function f() {
+    $(this).css('background-color', 'purple').css('color', 'white');
+}
+function b() {
+    $(this).css('background-color', 'white').css('color', 'black');
+}
+
+    $('#id_name, #id_email, #id_message').focus(f).blur(b);
+    $('[type=submit]').mouseover(f).mouseout(b);
+
+</script>
+
+{% endblock %}

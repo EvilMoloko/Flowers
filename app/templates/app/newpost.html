@@ -1,0 +1,18 @@
+﻿{% extends "app/layout.html" %}
+{% load staticfiles %}
+{% block content %}
+
+    <div class="blogpost">
+        <div class="container">
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div>
+                    {{ blogform.as_p }}
+                    <button type="submit" class="save btn btn_submit">Сохранить статью</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+{% endblock %}

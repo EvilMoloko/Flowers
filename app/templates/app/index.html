@@ -1,0 +1,110 @@
+﻿{% extends "app/layout.html" %}
+{% load staticfiles %}
+{% block content %}
+
+<main>
+    <section class="advantage">
+        <div class="container">
+            <h2 class="advantage__header">Flowerence</h2>
+            <div class="double-section">
+                <div class="advantage__block">
+                    <h2 class="advantage__block-header">
+                        Наши преимущества
+                    </h2>
+                    <div class="advantage__wrapper">
+                        <div class="advantage__item">
+                            <img src="{% static 'icons/photo_icon.svg' %}" alt="photo_icon">
+                            <div class="advantage__item-text">
+                                Отправим фото букета перед доставкой
+                            </div>
+                        </div>
+                        <div class="advantage__item">
+                            <img src="{% static 'icons/gift_icon.svg' %}" alt="gift_icon">
+                            <div class="advantage__item-text">
+                                Фирменная открытка и витамины для цветов в подарок
+                            </div>
+                        </div>
+                        <div class="advantage__item">
+                            <img src="{% static 'icons/timer_icon.svg' %}" alt="timer_icon">
+                            <div class="advantage__item-text">
+                                Доставка от одного часа после оформления <br>
+                                <span>либо доставка к точному времени</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider">
+                    <div class="slider__wrapper">
+                        <div class="slider__items">
+                            <div class="slider__item">
+                                <img src="{% static 'img/state43-1.jpg' %}" alt="" class="advantage__slider-img">
+                            </div>
+                            <div class="slider__item">
+                                <img src="{% static 'img/slide-2.jpg' %}" alt="" class="advantage__slider-img">
+                            </div>
+                            <div class="slider__item">
+                                <img src="{% static 'img/slide-3.jpg' %}" alt="" class="advantage__slider-img">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Кнопки -->
+                    <a href="#" class="slider__control" data-slide="prev"></a>
+                    <a href="#" class="slider__control" data-slide="next"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="popular">
+        <div class="container">
+            <h2 class="popular__header">Популярные товары</h2>
+            <div class="line-container">
+                <div class="flower-item">
+                    <img src="{% static 'img/2970.jpg' %}" alt="" class="flower-item__img">
+                    <div class="flower-item__main">
+                        <div class="flower-item__article">Арт.123124</div>
+                        <div class="flower-item__title">Букет цветов Аврора</div>
+                    </div>
+                    <div class="flower-item__footer">
+                        <div class="flower-item__price">18381 руб.</div>
+                        <button class=" btn btn_buy">Купить</button>
+                    </div>
+                </div>
+                <div class="flower-item">
+                    <img src="{% static 'img/2970.jpg' %}" alt="" class="flower-item__img">
+                    <div class="flower-item__main">
+                        <div class="flower-item__article">Арт.123124</div>
+                        <div class="flower-item__title">Букет цветов Аврора</div>
+                    </div>
+                    <div class="flower-item__footer">
+                        <div class="flower-item__price">18381 руб.</div>
+                        <button class=" btn btn_buy">Купить</button>
+                    </div>
+                </div>
+                <div class="flower-item">
+                    <img src="{% static 'img/2970.jpg' %}" alt="" class="flower-item__img">
+                    <div class="flower-item__main">
+                        <div class="flower-item__article">Арт.123124</div>
+                        <div class="flower-item__title">Букет цветов Аврора</div>
+                    </div>
+                    <div class="flower-item__footer">
+                        <div class="flower-item__price">18381 руб.</div>
+                        <button class=" btn btn_buy">Купить</button>
+                    </div>
+                </div>
+                <div class="flower-item">
+                    <img src="{% static 'img/2970.jpg' %}" alt="" class="flower-item__img">
+                    <div class="flower-item__main">
+                        <div class="flower-item__article">Арт.123124</div>
+                        <div class="flower-item__title">Букет цветов Аврора</div>
+                    </div>
+                    <div class="flower-item__footer">
+                        <div class="flower-item__price">18381 руб.</div>
+                        <button class=" btn btn_buy">Купить</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+{% endblock %}

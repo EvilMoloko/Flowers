@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-reboot.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-grid.min.css' %}" />
+    <link rel="shorcut icon" type="image/x-icon" href="{% static 'icons/favicon-flowerence.ico' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/fonts.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/chief-slider.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.min.css' %}" />
+    <script src="{% static 'app/scripts/modernizr-2.6.2.js' %}"></script>
+    <script src="{% static 'app/scripts/jquery-1.10.2.js' %}"></script>
+    <script src="{% static 'js/chief-slider.min.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+</head>
+<body>
+    <header class="header">
+        <nav>
+            <div class="container">
+                <ul class="menu">
+                    <li class="menu__item">
+                        <a class="logo" href="{% url 'home' %}">
+                            <img src="{% static 'icons/logo-flowerence.png' %}" alt="logo">
+                        </a>
+                    </li>
+                    <li class="menu__item"><a href="{% url 'home' %}">Главная</a></li>
+                    <li class="menu__item"><a href="{% url 'catalog' %}">Каталог</a></li>
+                    <li class="menu__item"><a href="{% url 'review' %}">Отзывы</a></li>
+                    <li class="menu__item"><a href="{% url 'links' %}">Ссылки</a></li>
+                    <li class="menu__item"><a href="{% url 'blog' %}">Блог</a></li>
+                    {% include 'app/loginpartial.html' %}
+                    {% if user.is_superuser %}
+                    <li class="menu__item"><a href="{% url 'newpost' %}">Добавить статью</a></li>
+                    {% endif %}
+                    <li class="menu__item"><a href="{% url 'videopost' %}">Видео</a></li>
+                    {% if not user.is_authenticated %}
+                    <li class="menu__item"><a href="{% url 'registration' %}">Регистрация</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+    </header>
+{% block content %}{% endblock %}
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__wrapper">
+                <ul class="menu-footer">
+                    <li class="menu-footer__item"><a href="{% url 'home' %}">Главная</a></li>
+                    <li class="menu-footer__item"><a href="{% url 'catalog' %}">Каталог</a></li>
+                    <li class="menu-footer__item"><a href="{% url 'review' %}">Отзывы</a></li>
+                    <li class="menu-footer__item"><a href="#">Ссылки</a></li>
+                    <li class="menu-footer__item"><a href="{% url 'blog' %}">Блог</a></li>
+                </ul>
+                <div class="footer__social">
+                    <div>Телефон для связи с нами:<br><a class="footer__phone" href="tel:+79213332211">89213332211</a></div>
+                    <a href="#" class="social__item"><img src="{% static 'icons/icon_instagram.svg' %}" alt="instagram"></a>
+                    <a href="#" class="social__item"><img src="{% static 'icons/icon_vk.svg' %}" alt="vk"></a>
+                    <a href="#" class="social__item"><img src="{% static 'icons/icon_pinterest.svg' %}" alt="pinterest"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="{% static 'app/scripts/bootstrap.js' %}"></script>
+    <script src="{% static 'app/scripts/respond.js' %}"></script>
+{% block scripts %}{% endblock %}
+
+</body>
+</html>
